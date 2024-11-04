@@ -1,10 +1,14 @@
+
+import { BookContextProvider } from "./Context/bookContext";
 import Layout from "./Layout/Layout";
 
 
 const App = () => {
   return (
     <div>
-      <Layout />
+      <BookContextProvider>
+        <Layout />
+      </BookContextProvider>
     </div>
   );
 };
