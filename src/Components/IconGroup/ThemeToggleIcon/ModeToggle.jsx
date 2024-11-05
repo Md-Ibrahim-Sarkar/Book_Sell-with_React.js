@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MdLightMode } from "react-icons/md";
+import { BookContext } from "../../../Context/bookContext";
 
 
 
 function ModeToggle({ className }) {
 
-  const [mode, setMode] = useState("light");
+  const { mode, setMode } = useContext(BookContext)
 
   const toggleMode = () => {
     if (mode === "light") {

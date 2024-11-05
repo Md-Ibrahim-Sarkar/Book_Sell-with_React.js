@@ -1,15 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { initialBooks } from "../../Data/initialBooks"
 import BookItem from "./BookItem"
+import { BookContext } from "../../Context/bookContext"
 
 
 function BookList() {
-  let [data, setData] = useState(initialBooks())
+
+
+  const { books } = useContext(BookContext)
 
   return (
-    <div className="col-span-8 border-x border-[#595959] p-4 flex flex-wrap gap-5 justify-between">
+    <div className="col-span-8 max-[500px]:col-span-12 max-[640px]:col-span-8 border-x border-[#595959] p-3 grid lg:grid-cols-3 grid-cols-1 place-items-center gap-y-3 gap-x-4">
 
-      {data.map(item => <BookItem key={item.id} data={item} />)}
+      {books.map(item => <BookItem key={item.id} data={item} />)}
 
 
     </div>

@@ -7,7 +7,6 @@ import { useState } from 'react';
 function Ratting() {
 
   const [rating, setRating] = useState(3);
-  console.log(rating);
 
   const StarDrawing = (
     <path

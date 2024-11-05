@@ -1,4 +1,4 @@
-import Cart from "./CartIcon/cart"
+import Cart from "./CartIcon/Cart"
 import Notification from "./NotificationIcon/Notification"
 import ModeToggle from "./ThemeToggleIcon/ModeToggle"
 
@@ -7,9 +7,9 @@ function IconGroup() {
   return (
     <div className="flex gap-4">
 
-      <Notification />
-      <ModeToggle />
-      <Cart className='max-[640px]:hidden' />
+      <Notification className='hover:scale-110' />
+      <ModeToggle className='hover:scale-110' />
+      <Cart className='max-[377px]:hidden hover:scale-110' />
 
     </div>
   )

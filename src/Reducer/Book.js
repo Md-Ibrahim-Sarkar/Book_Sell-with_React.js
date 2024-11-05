@@ -1,5 +1,6 @@
-export const bookReducer = (state, action) => {
-  return action
+export const bookReducer = (data, action) => {
+ return action
+
 }
 
 

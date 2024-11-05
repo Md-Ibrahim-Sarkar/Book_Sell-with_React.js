@@ -15,3 +15,18 @@
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
 }
+
+
+
+
+*{
+  font-family: "Inter", sans-serif;
+}
+
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background-color: #00e676; /* Color for the heart */
+  clip-path: path("M10 30 Q 50 5, 90 30 T 50 90 Z"); /* Custom path for heart shape */
+}

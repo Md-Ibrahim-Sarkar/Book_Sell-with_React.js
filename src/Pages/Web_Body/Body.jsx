@@ -8,7 +8,9 @@ function Body() {
       <div className="grid grid-cols-12 gap-4">
         <Sidebar />
         <BookList />
-        <FilterPanel />
+        <div className="max-[1024px]:hidden min-[1024px]: col-span-2">
+          <FilterPanel />
+        </div>
       </div>
     </div>
   )
