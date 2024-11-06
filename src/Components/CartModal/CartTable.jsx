@@ -6,7 +6,7 @@ import { BookContext } from "../../Context/bookContext";
 function CartTable() {
   const { addToCart } = useContext(BookContext)
   return (
-    <div className="col-span-4">
+    <div className="col-span-8">
       <div className="overflow-x-auto">
         <table className="table ">
           {/* <!-- head --> */}

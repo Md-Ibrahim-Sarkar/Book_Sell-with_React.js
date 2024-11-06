@@ -1,6 +1,4 @@
 export const bookReducer = (data, action) => {
- return action
 
+return action
 }
-
-

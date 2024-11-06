@@ -1,22 +1,41 @@
+import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
+import { BookContext } from "../../Context/bookContext";
 function FilterPanel() {
+
+  const {books,setBooks} = useContext(BookContext)
+
+  const toSortedByName = () => {
+    setBooks(books.toSorted((a,b) => a.name.localeCompare(b.name)))
+  }
+  
+  const toSortedByRating = () => {
+    const sortedRating = [...books].sort((a, b) => b.rating - a.rating);
+    setBooks(sortedRating);
+  };
+  
+  const toSortedByPrice = () => {
+    const sortedPrice = [...books].sort((a, b) => a.price - b.price);
+    setBooks(sortedPrice)
+  }
+
   return (
     <div className="min-[1024px]:col-span-3 max-[500px]:hidden">
       <div className="flex  mt-10 mb-4">
         <div>
           <h3 className="h3">Filter On Page</h3>
 
-          <div className="flex items-center gap-1 mb-1 mt-3 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByName} className="flex items-center gap-1 mb-1 mt-3 cursor-pointer hover:text-main-Color hover:scale-105">
             <IoIosArrowForward />
             <span className="text-xl">By name</span>
           </div>
 
-          <div className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByRating} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
             <IoIosArrowForward />
             <span className="text-xl ">By ratting</span>
           </div>
 
-          <div className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByPrice} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
             <IoIosArrowForward />
             <span className="text-xl">By price</span>
           </div>

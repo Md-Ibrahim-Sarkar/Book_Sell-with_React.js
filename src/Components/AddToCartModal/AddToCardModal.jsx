@@ -5,11 +5,28 @@ import { BookContext } from "../../Context/bookContext"
 
 function AddToCardModal() {
 
-  const { showBookItem } = useContext(BookContext)
+  const { showBookItem, addToCart, setAddToCart } = useContext(BookContext)
  
+  let {name, image, author, description, price, id} = showBookItem
  
-   let {name, image, author, description, price } = showBookItem
-   
+  const addHandler = () => {
+
+
+    let exist = addToCart.find(item => item.id === showBookItem.id)
+    if (exist === undefined) {
+        
+      setAddToCart([
+        ...addToCart,
+        {
+          id: id,
+          name: name,
+          author: author,
+          image: image,
+          price: price,
+        }
+       ])
+      }
+   }
   
   return (
     <div>
@@ -21,7 +38,9 @@ function AddToCardModal() {
             <p className="py-4">{description}</p>
 
             <div className="grid grid-cols-3">
-              <button className={`lg:py-2 h-10 lg:px-2 md:px-8 max-[1024px]:py-3 max-[1024px]:px-8 max-[590px]:px-5 max-[553px]:px-1 max-[500px]:px-5 max-[370px]:px-1 max-[340px]:text-lg max-[340px]:px-3 max-[1024px]:text-2xl md:text-2xl xl:px-3  xl:text-xl bg-main-Color  text-black lg:text-sm rounded`}>{price}| Add to cart</button>
+              <button onClick={addHandler} className={`lg:py-2 h-10 lg:px-2 md:px-8 max-[1024px]:py-3 max-[1024px]:px-8 max-[590px]:px-5 max-[553px]:px-1 max-[500px]:px-5 max-[370px]:px-1 max-[340px]:text-lg max-[340px]:px-3 max-[1024px]:text-2xl md:text-2xl xl:px-1  xl:text-base ${addToCart.find(i => i.id === id) ? `bg-rose-500`: `bg-main-Color`} text-black lg:text-sm font-semibold rounded text-nowrap`}>
+                {addToCart.find(item => item.id === id)? 'Already Added': `$${price}| Add to cart`}
+                </button>
 
               <Favorites className='h-10 me-20' />
               <div className="modal-action mt-0 me-40">

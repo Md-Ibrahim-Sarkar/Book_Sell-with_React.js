@@ -4,10 +4,20 @@ import { FaFolderPlus } from "react-icons/fa6";
 import { CiInboxIn } from "react-icons/ci";
 import { GiSelfLove } from "react-icons/gi";
 import FilterPanel from "../FilterPanel/FilterPanel";
+import SearchModal from "../../Components/SearchModal/SearchModal";
+import { useContext } from "react";
+import { BookContext } from "../../Context/bookContext";
 
 
 
 function Sidebar() {
+
+ const {setBooks,favorites} = useContext(BookContext)
+
+  const FavoritesHandler = () => {
+    setBooks(favorites)
+ }
+
   return (
     <div className="min-[1024px]:col-span-2 max-[1024px]:col-span-4 max-[500px]:hidden">
       <Search />
@@ -27,7 +37,7 @@ function Sidebar() {
           <span className="">Coming Soon</span>
         </div>
 
-        <div className="flex cursor-pointer  mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
+        <div onClick={FavoritesHandler} className="flex cursor-pointer  mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
           <GiSelfLove />
           <span className="">Favorites</span>
         </div>
@@ -36,7 +46,7 @@ function Sidebar() {
       <div className="min-[1024px]:hidden  ps-4">
         <FilterPanel />
       </div>
-
+         <SearchModal />
     </div>
   )
 }

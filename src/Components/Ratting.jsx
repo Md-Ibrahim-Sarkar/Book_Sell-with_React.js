@@ -1,12 +1,13 @@
-import { Rating } from '@smastrom/react-rating'
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { useState, useEffect } from "react";
 
-import '@smastrom/react-rating/style.css'
-import { useState } from 'react';
+function Ratting({ rating }) {
+  const [currentRating, setCurrentRating] = useState(rating);
 
-
-function Ratting() {
-
-  const [rating, setRating] = useState(3);
+  useEffect(() => {
+    setCurrentRating(rating);
+  }, [rating]);
 
   const StarDrawing = (
     <path
@@ -18,22 +19,22 @@ function Ratting() {
         C426.818,168.817,420.858,143.814,398.799,141.794z"
     />
   );
+
   const customStyles = {
     itemShapes: StarDrawing,
-    activeFillColor: '#00D991',
-    inactiveFillColor: '#8C8C8C',
+    activeFillColor: "#00D991",
+    inactiveFillColor: "#8C8C8C",
   };
 
   return (
     <Rating
-      className='text-main-Color'
+      className="text-main-Color"
       style={{ maxWidth: 140 }}
-      value={rating}
-      onChange={setRating}
+      value={currentRating}
+      onChange={setCurrentRating}
       itemStyles={customStyles}
     />
-  )
-
+  );
 }
 
-export default Ratting
+export default Ratting;
