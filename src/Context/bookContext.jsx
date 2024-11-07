@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import { bookReducer} from "../Reducer/Book";
 import { initialBooks } from "../Data/initialBooks";
 
@@ -13,14 +13,24 @@ const BookContextProvider = ({ children }) => {
   const [showBookItem, setShowBookItem] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [input, setInput] = useState('')
+  const [trending, setTrending] = useState([])
+  const [newReleases, setNewReleases] = useState([])
+  const [comingSoon, setComingSoon] = useState([])
   const [favorites, setFavorites] = useState([])
   
   let deleteAddToCart = (id) => {
     setAddToCart(addToCart.filter(item => item.id !== id))
 
   }
-console.log(books);
 
+
+  useEffect(() => {
+    setComingSoon(books.filter(item => item.status === "coming_soon"))
+    setNewReleases(books.filter(item => item.status === "new_releases"))
+    setTrending(books.filter(item => item.rating === 5))
+  },[])
+   console.log(trending);
+   
   
 
   const value = {
@@ -37,8 +47,11 @@ console.log(books);
     setIsModalOpen,
     setInput,
     input,
+    trending,
+    newReleases,
+    comingSoon,
     favorites,
-    setFavorites
+    setFavorites,
   }
 
   return (

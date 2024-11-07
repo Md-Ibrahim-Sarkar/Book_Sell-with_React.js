@@ -1,54 +1,73 @@
-import Search from "./Search/Search"
+import { useState, useContext } from "react";
+import Search from "./Search/Search";
 import { FaFire } from "react-icons/fa";
 import { FaFolderPlus } from "react-icons/fa6";
 import { CiInboxIn } from "react-icons/ci";
 import { GiSelfLove } from "react-icons/gi";
 import FilterPanel from "../FilterPanel/FilterPanel";
 import SearchModal from "../../Components/SearchModal/SearchModal";
-import { useContext } from "react";
 import { BookContext } from "../../Context/bookContext";
 
-
-
 function Sidebar() {
+  const { books, setBooks, favorites, trending, newReleases, comingSoon } = useContext(BookContext);
+  const [selectedCategory, setSelectedCategory] = useState("Trending");
 
- const {setBooks,favorites} = useContext(BookContext)
-
-  const FavoritesHandler = () => {
-    setBooks(favorites)
- }
+  const handleCategoryClick = (category, bookList) => {
+    setSelectedCategory(category);
+    setBooks(bookList);
+  };
 
   return (
-    <div className="min-[1024px]:col-span-2 max-[1024px]:col-span-4 max-[500px]:hidden">
+    <div className="min-[1024px]:col-span-2 max-[768px]:col-span-4 max-[1024px]:col-span-5 max-[540px]:hidden">
       <Search />
       <div>
-        <div className="flex cursor-pointer xl:w-48 xl:h-12 lg:w-40 h-12  mt-[31px] rounded-xl py-2 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
-          <FaFire className="" />
-          <span className="">Trending</span>
+        <div
+          onClick={() => handleCategoryClick("Trending", trending)}
+          className={`flex cursor-pointer xl:w-48 xl:h-12 lg:w-40 h-12 mt-[31px] rounded-xl py-2 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
+            selectedCategory === "Trending" ? "bg-main-Color text-black" : ""
+          }`}
+        >
+          <FaFire />
+          <span>Trending</span>
         </div>
 
-        <div className="flex cursor-pointer  mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
+        <div
+          onClick={() => handleCategoryClick("New Releases", newReleases)}
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
+            selectedCategory === "New Releases" ? "bg-main-Color text-black" : ""
+          }`}
+        >
           <FaFolderPlus />
-          <span className="">New Releases</span>
+          <span>New Releases</span>
         </div>
 
-        <div className="flex cursor-pointer  mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
+        <div
+          onClick={() => handleCategoryClick("Coming Soon", comingSoon)}
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
+            selectedCategory === "Coming Soon" ? "bg-main-Color text-black" : ""
+          }`}
+        >
           <CiInboxIn />
-          <span className="">Coming Soon</span>
+          <span>Coming Soon</span>
         </div>
 
-        <div onClick={FavoritesHandler} className="flex cursor-pointer  mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black hover:transform hover:transition-all hover:ease-linear hover:duration-300">
+        <div
+          onClick={() => handleCategoryClick("Favorites", favorites)}
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
+            selectedCategory === "Favorites" ? "bg-main-Color text-black" : ""
+          }`}
+        >
           <GiSelfLove />
-          <span className="">Favorites</span>
+          <span>Favorites</span>
         </div>
       </div>
 
-      <div className="min-[1024px]:hidden  ps-4">
+      <div className="min-[1024px]:hidden ps-4">
         <FilterPanel />
       </div>
-         <SearchModal />
+      <SearchModal />
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

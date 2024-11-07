@@ -1,4 +1,10 @@
 export function initialBooks() {
+
+
+
+
+   
+
     return [
         {
             "id": "01",
@@ -34,11 +40,11 @@ export function initialBooks() {
             "id": "04",
             "name": "Lever Lenatti Face",
             "image": `${new URL('../assets/Book_Images/4.jpg', import.meta.url)}`,
-            "rating": 2,
+            "rating": 4,
             "price": 160,
             "author": "Robert Brown",
             "description": "In Lever Lenatti Face, a young hero embarks on a journey to find answers about his past. Along the way, he encounters friends and foes alike, each with their own motives, making it an intense tale of discovery and courage.",
-            "status": "coming_soon"
+            "status": "new_releases"
         },
         {
             "id": "05",
@@ -58,7 +64,7 @@ export function initialBooks() {
             "price": 125,
             "author": "Michael Wilson",
             "description": "Slopjnnr Sunze is a tale of ambition and resilience. Set in a futuristic world, it follows the rise of a young inventor who must navigate challenges to achieve greatness. This story is a compelling reminder of the power of determination.",
-            "status": "coming_soon"
+            "status": "new_releases"
         },
         {
             "id": "07",
@@ -98,7 +104,7 @@ export function initialBooks() {
             "price": 140,
             "author": "Chris Thomas",
             "description": "The Lion The Witch and The Wardrobe is a timeless fantasy that transports readers to a magical realm. Filled with adventure and profound lessons, it’s a story of friendship, bravery, and the endless battle between good and evil.",
-            "status": "coming_soon"
+            "status": "new_releases"
         },
         {
             "id": "11",

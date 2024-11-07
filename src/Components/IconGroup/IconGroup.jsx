@@ -7,9 +7,9 @@ function IconGroup() {
   return (
     <div className="flex gap-4">
 
-      <Notification className='hover:scale-110' />
+      <Notification className='max-[377px]:hidden hover:scale-110' />
       <ModeToggle className='hover:scale-110' />
-      <Cart className='max-[377px]:hidden hover:scale-110' />
+      <Cart className=' hover:scale-110' />
 
     </div>
   )
