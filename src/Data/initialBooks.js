@@ -34,7 +34,7 @@ export function initialBooks() {
             "price": 130,
             "author": "Alice Johnson",
             "description": "Resntin Laur Goook takes readers on a journey through a mystical world where nothing is as it seems. The story is rich with intriguing characters and captivating plot twists, making it an unforgettable adventure of magic and mystery.",
-            "status": "new_releases"
+            "status": "trending"
         },
         {
             "id": "04",
@@ -74,7 +74,7 @@ export function initialBooks() {
             "price": 185,
             "author": "Sarah Martinez",
             "description": "Woodlands Nursing Home tells the heartwarming stories of residents and their caregivers. Through laughter, tears, and moments of wisdom, this book sheds light on the lives of those who live in and work within these caring, nurturing spaces.",
-            "status": "new_releases"
+            "status": "trending"
         },
         {
             "id": "08",
@@ -114,7 +114,7 @@ export function initialBooks() {
             "price": 180,
             "author": "Karen White",
             "description": "Alone: A True Story shares the moving journey of a woman overcoming hardship. With raw honesty and resilience, she navigates life's challenges, emerging stronger than before. Her story inspires readers to find strength in difficult times.",
-            "status": "new_releases"
+            "status": "trending"
         },
         {
             "id": "12",

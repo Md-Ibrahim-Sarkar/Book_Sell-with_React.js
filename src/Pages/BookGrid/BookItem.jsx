@@ -31,7 +31,7 @@ function BookItem({ data }) {
           <img className="w-full cursor-pointer" src={image} alt="Book cover" />
 
 
-          {/* <div className="relative group">
+          <div className="relative group">
             <img className="w-full h-full transition duration-300 group-hover:blur-sm" src={image} alt="Book cover" />
             <div
               class="absolute inset-0 flex items-center cursor-pointer justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -40,31 +40,31 @@ function BookItem({ data }) {
               $130| Add to cart
               </button>
             </div>
-          </div> */}
+          </div>
 
-          {/* Display "Coming Soon" label if the item's status is "coming_soon"
+          {/* Display "Coming Soon" label if the item's status is "coming_soon" */}
           {data.status === "coming_soon" && (
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
               <span className="text-white font-bold text-lg bg-red-600 px-4 py-2 rounded">
                 Coming Soon
               </span>
             </div>
-          )} */}
+          )}
 
-          {/* Display "new_releases" label if the item's status is "coming_soon"
+          {/* Display "new_releases" label if the item's status is "coming_soon" */}
           {data.status === "new_releases" && (
-            <div className="absolute animate-bounce top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white">
+            <div className="absolute  top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white">
               <span className="text-xs">New Release</span>
             </div>
-          )} */}
+          )}
 
-          {/* Display "Trending" label if the item's status is "coming_soon"
-          {data.rating === 5 && (
-            <div className="absolute top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white flex items-center animate-pulse">
+          {/* Display "Trending" label if the item's status is "coming_soon" */}
+          {data.status === "trending" && (
+            <div className="absolute top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white flex items-center ">
               <FaFire className="text-red-500  " />
-              <span className="text-xs text-black font-semibold">Trending</span>
+              <span className="text-xs text-black font-semibold p-1">Trending</span>
             </div>
-          )} */}
+          )}
         </div>
 
         <h3 className="text-sm font-semibold py-2">{name}</h3>
