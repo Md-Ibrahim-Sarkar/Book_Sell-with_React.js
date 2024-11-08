@@ -8,6 +8,7 @@ export const BookContext = createContext()
 const BookContextProvider = ({ children }) => {
   const [mode, setMode] = useState("light");
   // const [books, dispatch] = useReducer(bookReducer, initialBooks())
+  const [data, setData] = useState(initialBooks())
   const [books, setBooks] = useState(initialBooks())
   const [addToCart, setAddToCart] = useState([])
   const [showBookItem, setShowBookItem] = useState({})
@@ -17,20 +18,21 @@ const BookContextProvider = ({ children }) => {
   const [newReleases, setNewReleases] = useState([])
   const [comingSoon, setComingSoon] = useState([])
   const [favorites, setFavorites] = useState([])
+  const [Search,setSearch] = useState([])
   
   let deleteAddToCart = (id) => {
     setAddToCart(addToCart.filter(item => item.id !== id))
 
   }
 
-
+  
+  
   useEffect(() => {
     setComingSoon(books.filter(item => item.status === "coming_soon"))
     setNewReleases(books.filter(item => item.status === "new_releases"))
     setTrending(books.filter(item => item.rating === 5))
+    setSearch(books)
   },[])
-   console.log(trending);
-   
   
 
   const value = {
@@ -52,6 +54,9 @@ const BookContextProvider = ({ children }) => {
     comingSoon,
     favorites,
     setFavorites,
+    Search,
+    setSearch,
+    data
   }
 
   return (

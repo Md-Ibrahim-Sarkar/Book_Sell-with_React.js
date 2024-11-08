@@ -51,7 +51,7 @@ function CartModal() {
                   </thead>
                   <tbody className="">
                     {!addToCart || addToCart.length === 0 ? (
-                      <p className="text-center mt-5  text-2xl max-[550px]:text-sm mb-6">Your cart is empty.</p> // Display this message if the cart is empty or undefined
+                       <tr><td><p className="text-center mt-5  text-2xl max-[550px]:text-sm mb-6">Your cart is empty.</p></td></tr>
                     ) : (
                       addToCart.map((item) => (
                         <CartItem

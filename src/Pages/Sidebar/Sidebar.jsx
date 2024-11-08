@@ -8,7 +8,7 @@ import FilterPanel from "../FilterPanel/FilterPanel";
 import SearchModal from "../../Components/SearchModal/SearchModal";
 import { BookContext } from "../../Context/bookContext";
 
-function Sidebar() {
+function Sidebar({className}) {
   const { books, setBooks, favorites, trending, newReleases, comingSoon } = useContext(BookContext);
   const [selectedCategory, setSelectedCategory] = useState("Trending");
 
@@ -18,8 +18,10 @@ function Sidebar() {
   };
 
   return (
-    <div className="min-[1024px]:col-span-2 max-[768px]:col-span-4 max-[1024px]:col-span-5 max-[540px]:hidden">
+    <div className={`min-[1024px]:col-span-2 max-[768px]:col-span-4 max-[1024px]:col-span-5  ${className}`}>
+      <div className="max-[540px]:hidden">
       <Search />
+      </div>
       <div>
         <div
           onClick={() => handleCategoryClick("Trending", trending)}
@@ -62,7 +64,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="min-[1024px]:hidden ps-4">
+      <div className="min-[1024px]:hidden max-[540px]:hidden ps-4">
         <FilterPanel />
       </div>
       <SearchModal />

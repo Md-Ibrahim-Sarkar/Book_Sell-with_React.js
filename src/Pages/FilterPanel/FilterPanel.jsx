@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { BookContext } from "../../Context/bookContext";
-function FilterPanel() {
+function FilterPanel({className}) {
 
   const {books,setBooks} = useContext(BookContext)
 
@@ -20,8 +20,8 @@ function FilterPanel() {
   }
 
   return (
-    <div className="min-[1024px]:col-span-3 max-[500px]:hidden">
-      <div className="flex  mt-10 mb-4">
+    <div className={`min-[1024px]:col-span-3 ${className}`}>
+      <div className="flex  mt-10 max-[540px]:mt-0 mb-4">
         <div>
           <h3 className="h3">Filter On Page</h3>
 

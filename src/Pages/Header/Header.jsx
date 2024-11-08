@@ -4,6 +4,7 @@ import IconGroup from "../../Components/IconGroup/IconGroup";
 import { BookContext } from "../../Context/bookContext";
 import { initialBooks } from "../../Data/initialBooks";
 import MobileToggle from './MobileToggle';
+import SearchModal from '../../Components/SearchModal/SearchModal';
 
 
 
@@ -23,7 +24,12 @@ function Header() {
         </div>
       </div>
       </div>
+      <div className=''>
       <MobileToggle />
+      </div>
+      <div className='min-[541px]:hidden'>
+      <SearchModal className='mx-3' />
+      </div>
     </div>
   )
 }

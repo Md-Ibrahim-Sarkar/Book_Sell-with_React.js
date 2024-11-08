@@ -32,7 +32,6 @@ function AddToCardModal() {
     setIsFilled(!isFilled);
   
   };
-console.log(favorites);
 
   const isInCart = addToCart.find(item => item.id === id);
   const isFavorite = favorites.find(item => item.id == id);
@@ -40,26 +39,26 @@ console.log(favorites);
   return (
     <div>
       <dialog id="my_modal_6" className="modal modal-middle">
-        <div className="modal-box grid grid-cols-7 p-0 max-w-[700px] max-h-[445px]">
-          <div className="p-8 col-span-5">
-            <h3 className="font-bold text-2xl">{name}</h3>
-            <span className="text-sm">{author}</span>
-            <p className="py-4">{description}</p>
+        <div className="modal-box grid grid-cols-7 p-0 max-w-[700px] max-h-[445px] max-[501px]:max-w-[420px] max-[501px]:max-h-[260px] ">
+          <div className="p-8 max-[501px]:p-3 col-span-5">
+            <h3 className="font-bold text-2xl max-[501px]:text-xl max-[400px]:text-[13px]">{name}</h3>
+            <span className="text-sm max-[400px]:text-[10px]">{author}</span>
+            <p className="py-4 max-[501px]:text-xs max-[400px]:py-1">{description}</p>
 
             <div className="grid grid-cols-7 place-items-start">
               <button
                 onClick={addHandler}
-                className={`col-span-2 lg:py-2 h-10 lg:px-2 md:px-8 max-[1024px]:py-3 max-[1024px]:px-8 max-[590px]:px-5 max-[553px]:px-1 max-[500px]:px-5 max-[370px]:px-1 max-[340px]:text-lg max-[340px]:px-3 max-[1024px]:text-2xl md:text-2xl xl:px-1 xl:text-base ${isInCart ? "bg-rose-500" : "bg-main-Color"} text-black lg:text-sm font-semibold rounded text-nowrap`}
+                className={`col-span-2 lg:py-2 h-10 lg:px-2 max-[553px]:px-1 max-[500px]:px-1  md:px-2  xl:px-1 xl:text-base ${isInCart ? "bg-rose-500" : "bg-main-Color"} text-black lg:text-sm font-semibold rounded text-nowrap max-[768px]:px-2 max-[660px]:text-sm max-[600px]:text-[12px] max-[400px]:text-[8px]`}
               >
                 {isInCart ? "Already Added" : `$${price} | Add to cart`}
               </button>
 
               <div
                 onClick={favoriteClick}
-                className="inline rounded-md flex justify-center items-center col-span-2 place-self-center -mt-2"
+                className=" rounded-md flex justify-center items-center col-span-2 max-[640px]:col-span-3 place-self-center -mt-1"
               >
                 <svg
-                  className="border border-main-Color rounded-md max-[768px]:w-14 md:w-14 lg:w-9 xl:w-11"
+                  className="border border-main-Color  rounded-md max-[768px]:ms-7 max-[692px]:ms-10 w-10 lg:w-9 xl:w-11"
                   viewBox="0 0 24 24"
                   style={{ cursor: "pointer" }}
                 >

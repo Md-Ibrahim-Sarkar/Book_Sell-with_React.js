@@ -6,10 +6,10 @@ function Body() {
   return (
     <div className="container mx-auto ">
       <div className="grid grid-cols-12 gap-4">
-        <Sidebar />
+        <Sidebar className='max-[540px]:hidden' />
         <BookList />
         <div className="max-[1024px]:hidden min-[1024px]: col-span-2">
-          <FilterPanel />
+          <FilterPanel className='max-[500px]:hidden' />
         </div>
       </div>
     </div>
