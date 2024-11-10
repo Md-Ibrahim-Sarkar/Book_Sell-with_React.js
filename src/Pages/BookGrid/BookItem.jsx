@@ -28,24 +28,16 @@ function BookItem({ data }) {
             image: data.image,
           })
         )} className="relative flex justify-center">
-          <img className="w-full cursor-pointer" src={image} alt="Book cover" />
-
-
-          <div className="relative group">
-            <img className="w-full h-full transition duration-300 group-hover:blur-sm" src={image} alt="Book cover" />
-            <div
-              class="absolute inset-0 flex items-center cursor-pointer justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <button class="bg-gray-800 text-white px-4 py-2 rounded">
-              $130| Add to cart
-              </button>
-            </div>
+          <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <img className=" transition duration-300 w-full ease-in-out hover:scale-110 cursor-pointer" src={image} alt="Book cover" />
           </div>
+
+
 
           {/* Display "Coming Soon" label if the item's status is "coming_soon" */}
           {data.status === "coming_soon" && (
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-              <span className="text-white font-bold text-lg bg-red-600 px-4 py-2 rounded">
+            <div className="absolute top-0 left-0 w-full h-full hover:bg-black hover:bg-opacity-50 flex items-center cursor-pointer justify-center hover:transform hover:transition-all hover:ease-linear hover:duration-300">
+              <span className="text-black font-bold text-lg bg-gradient-to-r from-green-400 via-green-200 to-green-600 px-4 py-2 rounded">
                 Coming Soon
               </span>
             </div>

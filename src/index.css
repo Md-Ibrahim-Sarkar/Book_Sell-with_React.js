@@ -30,3 +30,15 @@
   background-color: #00e676; /* Color for the heart */
   clip-path: path("M10 30 Q 50 5, 90 30 T 50 90 Z"); /* Custom path for heart shape */
 }
+
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

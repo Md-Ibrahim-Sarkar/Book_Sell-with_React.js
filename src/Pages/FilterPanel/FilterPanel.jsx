@@ -25,17 +25,17 @@ function FilterPanel({className}) {
         <div>
           <h3 className="h3">Filter On Page</h3>
 
-          <div onClick={toSortedByName} className="flex items-center gap-1 mb-1 mt-3 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByName} className="flex items-center gap-1 mb-1 mt-3 cursor-pointer hover:text-main-Color transform transition duration-500 hover:scale-110 animate-fadeText">
             <IoIosArrowForward />
             <span className="text-xl">By name</span>
           </div>
 
-          <div onClick={toSortedByRating} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByRating} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color transform transition duration-500 hover:scale-110 animate-fadeText">
             <IoIosArrowForward />
             <span className="text-xl ">By ratting</span>
           </div>
 
-          <div onClick={toSortedByPrice} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color hover:scale-105">
+          <div onClick={toSortedByPrice} className="flex items-center gap-1 mb-1 cursor-pointer hover:text-main-Color transform transition duration-500 hover:scale-110 animate-fadeText">
             <IoIosArrowForward />
             <span className="text-xl">By price</span>
           </div>

@@ -18,15 +18,15 @@ function Sidebar({className}) {
   };
 
   return (
-    <div className={`min-[1024px]:col-span-2 max-[768px]:col-span-4 max-[1024px]:col-span-5  ${className}`}>
-      <div className="max-[540px]:hidden">
+    <div className={`min-[1024px]:col-span-2 max-[768px]:col-span-4 max-[1024px]:col-span-5 ${className}`}>
+     <div className="max-[540px]:hidden">
       <Search />
       </div>
       <div>
         <div
           onClick={() => handleCategoryClick("Trending", trending)}
-          className={`flex cursor-pointer xl:w-48 xl:h-12 lg:w-40 h-12 mt-[31px] rounded-xl py-2 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
-            selectedCategory === "Trending" ? "bg-main-Color text-black" : ""
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 transform ease-linear transition-all duration-300 animate-fadeText ${
+            selectedCategory === "Trending" ? "bg-main-Color text-black font-bold shadow-lg" : "hover:bg-main-Color hover:text-black"
           }`}
         >
           <FaFire />
@@ -35,8 +35,8 @@ function Sidebar({className}) {
 
         <div
           onClick={() => handleCategoryClick("New Releases", newReleases)}
-          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
-            selectedCategory === "New Releases" ? "bg-main-Color text-black" : ""
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 transform ease-linear transition-all duration-300 ${
+            selectedCategory === "New Releases" ? "bg-main-Color text-black font-bold shadow-lg" : "hover:bg-main-Color hover:text-black"
           }`}
         >
           <FaFolderPlus />
@@ -45,8 +45,8 @@ function Sidebar({className}) {
 
         <div
           onClick={() => handleCategoryClick("Coming Soon", comingSoon)}
-          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
-            selectedCategory === "Coming Soon" ? "bg-main-Color text-black" : ""
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 transform ease-linear transition-all duration-300 ${
+            selectedCategory === "Coming Soon" ? "bg-main-Color text-black font-bold shadow-lg" : "hover:bg-main-Color hover:text-black"
           }`}
         >
           <CiInboxIn />
@@ -55,8 +55,8 @@ function Sidebar({className}) {
 
         <div
           onClick={() => handleCategoryClick("Favorites", favorites)}
-          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 hover:bg-main-Color hover:text-black transition-all duration-300 ${
-            selectedCategory === "Favorites" ? "bg-main-Color text-black" : ""
+          className={`flex cursor-pointer mt-[10px] rounded-xl py-3 px-3 items-center gap-2 transform ease-linear transition-all duration-300 ${
+            selectedCategory === "Favorites" ? "bg-main-Color text-black font-bold shadow-lg" : "hover:bg-main-Color hover:text-black"
           }`}
         >
           <GiSelfLove />
