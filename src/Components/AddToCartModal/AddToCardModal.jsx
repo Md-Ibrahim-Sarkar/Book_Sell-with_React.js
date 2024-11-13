@@ -2,24 +2,26 @@ import { useContext, useState } from "react";
 import { BookContext } from "../../Context/bookContext";
 
 function AddToCardModal() {
-  const { showBookItem, addToCart, setAddToCart, favorites, setFavorites } = useContext(BookContext);
+  const { showBookItem, addToCart, dispatch, favorites, setFavorites } = useContext(BookContext);
   const [isFilled, setIsFilled] = useState(false);
-
+    console.log(addToCart);
+    
   const { name, image, author, description, price, id } = showBookItem;
 
   const addHandler = () => {
     const exist = addToCart.find(item => item.id === id);
     if (!exist) {
-      setAddToCart([
-        ...addToCart,
-        {
+      dispatch({
+        type: 'ADD_TO_CART_MODAL',
+        payload: {
           id,
           name,
           author,
           image,
           price,
-        },
-      ]);
+        }
+      })
+
     }
   };
 

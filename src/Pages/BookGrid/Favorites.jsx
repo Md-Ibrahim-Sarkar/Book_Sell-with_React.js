@@ -23,7 +23,7 @@ function Favorites({ className, data }) {
       className={`${className} inline rounded-md flex justify-center items-center`}
     >
       <svg
-        className="border border-main-Color rounded-md max-[768px]:w-14 md:w-14 lg:w-9 xl:w-11"
+        className="border border-main-Color rounded-md max-[640px]:w-10 sm:w-12 md:w-9 lg:w-9 xl:w-11"
         viewBox="0 0 24 24"
         style={{ cursor: "pointer" }}
       >

@@ -25,7 +25,7 @@ function CartItem({ cartData, quantity, updateQuantity }) {
       <td>
         <PlusMinus quantity={quantity} onQuantityChange={handleQuantityChange} />
       </td>
-      <td className="">${total.toFixed(2)}</td>
+      <td className="">${total}</td>
       <td>
         <RiDeleteBin5Line onClick={() => deleteAddToCart(cartData.id)} className="w-10 h-6 cursor-pointer" />
       </td>

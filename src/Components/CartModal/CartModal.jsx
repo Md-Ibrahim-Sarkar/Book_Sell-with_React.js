@@ -6,19 +6,15 @@ import CartItem from "./CartItem";
 
 function CartModal() {
   const { addToCart } = useContext(BookContext);
-
-  // State to keep track of quantities for each item
   const [quantities, setQuantities] = useState({});
 
-  // Calculate the total price based on cart items and their quantities
   const calculateTotalPrice = () => {
     return addToCart.reduce((total, item) => {
-      const quantity = quantities[item.id] || 1; // default to 1 if no quantity set
+      const quantity = quantities[item.id] || 1;
       return total + item.price * quantity;
     }, 0);
   };
 
-  // Update quantity function to pass to CartItem
   const handleQuantityChange = (id, newQuantity) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -51,7 +47,7 @@ function CartModal() {
                   </thead>
                   <tbody className="">
                     {!addToCart || addToCart.length === 0 ? (
-                       <tr><td><p className="text-center mt-5  text-2xl max-[550px]:text-sm mb-6">Your cart is empty.</p></td></tr>
+                      <tr><td><p className="text-center mt-5  text-2xl max-[550px]:text-sm mb-6">Your cart is empty.</p></td></tr>
                     ) : (
                       addToCart.map((item) => (
                         <CartItem
@@ -66,31 +62,33 @@ function CartModal() {
                 </table>
               </div>
             </div>
-            <div className="max-w-[360px] w-full max-h-[280px] col-span-4">
-              <div className="bg-[rgba(140,140,140,0.3)] mt-9 py-6 pb-9 rounded-t">
-                <h3 className="h3 text-center">Order Summary</h3>
+            <div className="w-full col-span-4 place-items-center">
+              <div className="max-w-[360px] w-full max-h-[280px]  ">
+                <div className="bg-[rgba(140,140,140,0.3)] mt-9 py-6 pb-9 rounded-t">
+                  <h3 className="h3 text-center">Order Summary</h3>
+                </div>
+                <div className="border-t border-[#8C8C8C] bg-[rgba(140,140,140,0.3)] rounded-b">
+                  <ul className="p-7 px-12 pb-0">
+                    <li className="flex justify-between">
+                      <span>Subtotal</span>
+                      <span>${calculateTotalPrice().toFixed(2)}</span>
+                    </li>
+                    <li className="flex justify-between mt-5">
+                      <span>Shipping</span>
+                      <span className="text-main-Color">Free</span>
+                    </li>
+                  </ul>
+                  <ul className="bg-[rgba(140,140,140,0.26)] px-12 mt-5">
+                    <li className="flex justify-between mt-4">
+                      <span>Total</span>
+                      <span>${calculateTotalPrice().toFixed(2)}</span>
+                    </li>
+                  </ul>
+                </div>
+                <button className="py-2 px-6 bg-main-Color text-black w-full mt-7 rounded hover:scale-105 hover:transform hover:transition-all hover:ease-linear hover:duration-300 text-[23px]">
+                  Checkout
+                </button>
               </div>
-              <div className="border-t border-[#8C8C8C] bg-[rgba(140,140,140,0.3)] rounded-b">
-                <ul className="p-7 px-12 pb-0">
-                  <li className="flex justify-between">
-                    <span>Subtotal</span>
-                    <span>${calculateTotalPrice().toFixed(2)}</span>
-                  </li>
-                  <li className="flex justify-between mt-5">
-                    <span>Shipping</span>
-                    <span className="text-main-Color">Free</span>
-                  </li>
-                </ul>
-                <ul className="bg-[rgba(140,140,140,0.26)] px-12 mt-5">
-                  <li className="flex justify-between mt-4">
-                    <span>Total</span>
-                    <span>${calculateTotalPrice().toFixed(2)}</span>
-                  </li>
-                </ul>
-              </div>
-              <button className="py-2 px-6 bg-main-Color text-black w-full mt-7 rounded hover:scale-105 hover:transform hover:transition-all hover:ease-linear hover:duration-300 text-[23px]">
-                Checkout
-              </button>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ function BookItem({ data }) {
   return (
     <div>
       <div
-        className="max-[649px]:w-auto min-[1280px]:w-[270px] min-[1536px]:w-[320px] min-[650px]:lg:w-[200px] bg-base-100 w-[383px] max-h-[711px] shadow-xl p-2 border border-[#595959] h-auto rounded-lg "
+        className="max-[649px]:w-auto min-[768px]:w-[225px] min-[1280px]:w-[270px] min-[1536px]:w-[320px] min-[650px]:lg:w-[200px] bg-base-100 w-[383px] max-h-[711px] shadow-xl p-2 border border-[#595959] h-auto rounded-lg "
         
       >
         <div onClick={() => (
@@ -34,7 +34,7 @@ function BookItem({ data }) {
 
 
 
-          {/* Display "Coming Soon" label if the item's status is "coming_soon" */}
+          {/* Coming Soon  */}
           {data.status === "coming_soon" && (
             <div className="absolute top-0 left-0 w-full h-full hover:bg-black hover:bg-opacity-50 flex items-center cursor-pointer justify-center hover:transform hover:transition-all hover:ease-linear hover:duration-300">
               <span className="text-black font-bold text-lg bg-gradient-to-r from-green-400 via-green-200 to-green-600 px-4 py-2 rounded">
@@ -43,14 +43,14 @@ function BookItem({ data }) {
             </div>
           )}
 
-          {/* Display "new_releases" label if the item's status is "coming_soon" */}
+          {/* new_releases */}
           {data.status === "new_releases" && (
             <div className="absolute  top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white">
               <span className="text-xs">New Release</span>
             </div>
           )}
 
-          {/* Display "Trending" label if the item's status is "coming_soon" */}
+          {/* Trending */}
           {data.status === "trending" && (
             <div className="absolute top-1 right-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-l p-1 text-white flex items-center ">
               <FaFire className="text-red-500  " />

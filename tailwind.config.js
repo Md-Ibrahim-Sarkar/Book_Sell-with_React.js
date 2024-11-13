@@ -11,7 +11,7 @@ export default {
       },
     },
     daisyui: {
-      themes: false,
+      themes: ["light", "black",]
     },
     animation: {
       fadeIn: 'fadeIn 0.5s ease-in-out forwards',

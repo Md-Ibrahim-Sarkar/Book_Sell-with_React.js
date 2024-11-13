@@ -2,17 +2,19 @@ import React, { useContext } from 'react';
 import { BookContext } from '../../Context/bookContext';
 import { IoSearchSharp, IoCloseSharp } from "react-icons/io5";
 import SearchItem from '../../Pages/Sidebar/Search/SearchItem';
+import { initialBooks } from '../../Data/initialBooks';
 
 function SearchModal({ className }) {
-  const { data, input, setInput, isModalOpen, setIsModalOpen } = useContext(BookContext);
+  const {  input, setInput, isModalOpen, setIsModalOpen } = useContext(BookContext);
+
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setInput(''); // Clear input when closing modal
+    setInput(''); 
   };
 
-  // Filter books where the first letter of the name or author matches the input
-  const filteredBooks = data.filter(book =>
+
+  const filteredBooks = initialBooks().filter(book =>
     book.name.toLowerCase().startsWith(input.toLowerCase()) ||
     book.author.toLowerCase().startsWith(input.toLowerCase())
   );

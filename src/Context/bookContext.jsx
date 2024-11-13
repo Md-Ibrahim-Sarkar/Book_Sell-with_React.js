@@ -1,17 +1,25 @@
 import { createContext, useEffect, useReducer, useState } from "react";
-import { bookReducer} from "../Reducer/Book";
+import { AddToCartReducer} from "../Reducer/Book";
 import { initialBooks } from "../Data/initialBooks";
 
 export const BookContext = createContext()
 
 
 const BookContextProvider = ({ children }) => {
-  const [mode, setMode] = useState("light");
-  // const [books, dispatch] = useReducer(bookReducer, initialBooks())
-  const [data, setData] = useState(initialBooks())
+  // Add to cart Reducer State
+  const [addToCart, dispatch] = useReducer(AddToCartReducer, [])
+  
+
+  //Main books Data State
   const [books, setBooks] = useState(initialBooks())
-  const [addToCart, setAddToCart] = useState([])
+
+  // Dark_Light state
+  const [mode, setMode] = useState("light");
+
+  // for 
   const [showBookItem, setShowBookItem] = useState({})
+  
+  // Other State
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [input, setInput] = useState('')
   const [trending, setTrending] = useState([])
@@ -21,7 +29,10 @@ const BookContextProvider = ({ children }) => {
   const [Search,setSearch] = useState([])
   
   let deleteAddToCart = (id) => {
-    setAddToCart(addToCart.filter(item => item.id !== id))
+    dispatch({
+      type: 'DELETE_CART_ITEM',
+      payload:addToCart.filter(item => item.id !== id)
+    })
 
   }
 
@@ -36,12 +47,12 @@ const BookContextProvider = ({ children }) => {
   
 
   const value = {
+    dispatch,
     books,
     setBooks,
     mode,
     setMode,
     addToCart,
-    setAddToCart,
     deleteAddToCart,
     showBookItem,
     setShowBookItem,
@@ -56,7 +67,6 @@ const BookContextProvider = ({ children }) => {
     setFavorites,
     Search,
     setSearch,
-    data
   }
 
   return (
