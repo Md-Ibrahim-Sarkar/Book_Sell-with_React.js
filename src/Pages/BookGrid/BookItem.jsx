@@ -14,7 +14,7 @@ function BookItem({ data }) {
   return (
     <div>
       <div
-        className="max-[649px]:w-auto min-[768px]:w-[225px] min-[1280px]:w-[270px] min-[1536px]:w-[320px] min-[650px]:lg:w-[200px] bg-base-100 w-[383px] max-h-[711px] shadow-xl p-2 border border-[#595959] h-auto rounded-lg "
+        className="max-[649px]:w-auto min-[768px]:w-[225px] min-[1280px]:w-[270px] min-[1536px]:w-[320px] min-[650px]: lg:w-[200px] bg-white dark:bg-slate-900 w-[383px] max-h-[711px] shadow-xl p-2 border border-[#595959] h-auto rounded-lg "
         
       >
         <div onClick={() => (
@@ -26,6 +26,7 @@ function BookItem({ data }) {
             description: data.description,
             price: data.price,
             image: data.image,
+            status: data.status,
           })
         )} className="relative flex justify-center">
           <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
@@ -65,7 +66,9 @@ function BookItem({ data }) {
         <Ratting rating={rating} />
 
         <div className="flex justify-between max-[1024px]:justify-between items-center mt-3">
-          <AddCartBtn data={data} />
+          {
+            data.status === "coming_soon" ?  <AddCartBtn className='pointer-events-none' data={data} />: <AddCartBtn data={data} />
+         }
           <Favorites data={data} />
         </div>
       </div>

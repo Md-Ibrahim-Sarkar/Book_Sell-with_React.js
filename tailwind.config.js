@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'selector',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,9 +10,6 @@ export default {
       colors: {
         'main-Color': '#00D991',
       },
-    },
-    daisyui: {
-      themes: ["light", "black",]
     },
     animation: {
       fadeIn: 'fadeIn 0.5s ease-in-out forwards',

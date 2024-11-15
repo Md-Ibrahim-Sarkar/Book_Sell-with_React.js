@@ -13,11 +13,11 @@ function Header() {
   const {setBooks} = useContext(BookContext)
 
   return (
-    <div className='sticky top-0 w-full z-20 bg-base-100 '>
+    <div className='sticky top-0 w-full bg-white dark:bg-slate-900 z-20'>
       <div className="border-b border-[#595959]">
       <div className="container mx-auto md:px-3">
         <div className="flex justify-between py-5 max-[640px]:py-3 items-center max-[655px]:px-3">
-          <div onClick={()=>setBooks(initialBooks())} className="">
+          <div onClick={() => setBooks(initialBooks())} className="">
             <span className="text-main-Color text-2xl font-semibold cursor-pointer ">Ibrahim <span className='text-4xl'>.</span></span>
           </div>
           <IconGroup />

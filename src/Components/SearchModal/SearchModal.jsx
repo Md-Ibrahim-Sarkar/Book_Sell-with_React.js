@@ -24,7 +24,7 @@ function SearchModal({ className }) {
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-20 bg-black bg-opacity-50 transition-opacity duration-300 ease-out">
           <div
-            className={`transform transition-all duration-300 ease-in-out bg-base-200 rounded-md xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[550px] max-[643px]:w-[500px] max-[530px]:w-[400px] max-[414px]:w-[300px] mt-20 ${className}`}
+            className={`transform bg-white dark:bg-slate-900 transition-all duration-300 ease-in-out  rounded-md xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[550px] max-[643px]:w-[500px] max-[530px]:w-[400px] max-[414px]:w-[300px] mt-20 ${className}`}
           >
             {/* Modal Header */}
             <div className=" text-base-content flex border-b rounded-t-lg shadow-lg  w-full px-6 pt-6">

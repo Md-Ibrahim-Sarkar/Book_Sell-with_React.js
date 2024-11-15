@@ -14,7 +14,7 @@ const BookContextProvider = ({ children }) => {
   const [books, setBooks] = useState(initialBooks())
 
   // Dark_Light state
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(false);
 
   // for 
   const [showBookItem, setShowBookItem] = useState({})
