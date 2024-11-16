@@ -1,10 +1,5 @@
 export function initialBooks() {
 
-
-
-
-   
-
     return [
         {
             "id": "01",

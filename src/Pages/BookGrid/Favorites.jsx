@@ -13,13 +13,15 @@ function Favorites({ className, data }) {
     } else {
       setFavorites([...favorites, data]);
     }
+
+
   
   };
   const isFavorite = favorites.find(item => item.id === data.id);
 
   return (
     <div
-      onClick={() => (handleClick(),handleFavoriteModal())}
+      onClick={() => (handleClick())}
       className={`${className} inline rounded-md flex justify-center items-center`}
     >
       <svg

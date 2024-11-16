@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { BookContext } from "../../Context/bookContext";
 
-function AddToCardModal() {
+function ShowBookModal() {
   const {showBookItem, addToCart, dispatch, favorites, setFavorites } = useContext(BookContext);
   const [isFilled, setIsFilled] = useState(false);
   
@@ -97,4 +97,4 @@ function AddToCardModal() {
   );
 }
 
-export default AddToCardModal;
+export default ShowBookModal;

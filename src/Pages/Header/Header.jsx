@@ -17,8 +17,9 @@ function Header() {
       <div className="border-b border-[#595959]">
       <div className="container mx-auto md:px-3">
         <div className="flex justify-between py-5 max-[640px]:py-3 items-center max-[655px]:px-3">
-          <div onClick={() => (setBooks(initialBooks()),setSelectedCategory(''))} className="">
-            <span className="text-main-Color text-2xl font-semibold cursor-pointer ">Ibrahim <span className='text-4xl'>.</span></span>
+          <div onClick={() => (setBooks(initialBooks()),setSelectedCategory(''))} className="relative cursor-pointer">
+              <span className="text-main-Color text-2xl font-semibold cursor-pointer ">Ibrahim <span className='text-4xl'>.</span></span>
+              <small className='absolute w-full -bottom-1   text-[8px] dark:text-main-Color '>All Books</small>
           </div>
           <IconGroup />
         </div>

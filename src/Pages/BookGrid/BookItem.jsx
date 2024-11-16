@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Ratting from "../../Components/Ratting";
-import AddToCardModal from "../../Components/AddToCartModal/AddToCardModal";
 import { BookContext } from "../../Context/bookContext";
 import AddCartBtn from "./AddCartBtn";
 import Favorites from "./Favorites";
 import { FaFire } from "react-icons/fa";
+import ShowBookModal from "../../Components/ShowBookModal/ShowBookModal";
 
 function BookItem({ data }) {
   const { setShowBookItem,comingSoon } = useContext(BookContext);
@@ -73,7 +73,7 @@ function BookItem({ data }) {
         </div>
       </div>
 
-      <AddToCardModal data={data} />
+      <ShowBookModal data={data} />
     </div>
   );
 }
