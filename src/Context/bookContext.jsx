@@ -26,7 +26,9 @@ const BookContextProvider = ({ children }) => {
   const [newReleases, setNewReleases] = useState([])
   const [comingSoon, setComingSoon] = useState([])
   const [favorites, setFavorites] = useState([])
-  const [Search,setSearch] = useState([])
+  const [Search, setSearch] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("");
+  
   
   let deleteAddToCart = (id) => {
     dispatch({
@@ -67,6 +69,9 @@ const BookContextProvider = ({ children }) => {
     setFavorites,
     Search,
     setSearch,
+    selectedCategory,
+    setSelectedCategory,
+
   }
 
   return (

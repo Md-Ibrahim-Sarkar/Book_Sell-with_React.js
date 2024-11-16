@@ -3,11 +3,12 @@ import { BookContext } from "../../../Context/bookContext"
 
 function SearchItem({ data ,closeModal}) {
   
-  const {setBooks } = useContext(BookContext)
+  const {setBooks,setSelectedCategory } = useContext(BookContext)
   
   let ClickHandler = () => {
     setBooks([data])
     closeModal()
+    setSelectedCategory('')
  }
 
   return (

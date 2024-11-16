@@ -45,17 +45,17 @@ function AddToCardModal() {
           <div className="p-8 max-[501px]:p-3 col-span-5">
             <h3 className="font-bold text-2xl max-[501px]:text-xl max-[400px]:text-[13px]">{name}</h3>
             <span className="text-sm max-[400px]:text-[10px]">{author}</span>
-            <p className="py-4 max-[501px]:text-xs max-[400px]:py-1">{description}</p>
+            <p className="py-4 max-[501px]:text-xs max-[400px]:py-1 mb-2">{description}</p>
 
             <div className="grid grid-cols-7 place-items-start">
 
 
               <button
                 onClick={addHandler}
-                className={`col-span-2 lg:py-2 h-10 lg:px-2 max-[553px]:px-1 max-[500px]:px-1  md:px-2  xl:px-1 xl:text-base ${isInCart ? "bg-rose-500" : "bg-main-Color"} text-black lg:text-sm font-semibold rounded text-nowrap max-[768px]:px-2 max-[660px]:text-sm max-[600px]:text-[12px] max-[400px]:text-[8px] ${status === "coming_soon" ? "pointer-events-none":''} focus:outline-none`}
+                className={`col-span-2 lg:py-2 h-10 lg:px-2 max-[553px]:px-1 max-[500px]:px-1  md:px-2  xl:px-1 xl:text-base ${isInCart ? "bg-green-200" : "bg-main-Color"} text-black lg:text-sm font-semibold rounded text-nowrap max-[768px]:px-2 max-[660px]:text-sm max-[600px]:text-[12px] max-[400px]:text-[8px] ${status === "coming_soon" ? "pointer-events-none":''} focus:outline-none max-[600px]:-mt-2`}
               >
                 {status === "coming_soon"
-                  ? 'Coming Soon'
+                  ? <span className="px-5  max-[600px]:px-1 max-[600px]:text-[13px]">Up Coming</span>
                   : (
                     <span>
                       {isInCart ? "Already Added" : `$${price} | Add to cart`}
@@ -67,7 +67,7 @@ function AddToCardModal() {
 
               <div
                 onClick={favoriteClick}
-                className=" rounded-md flex justify-center items-center col-span-2 max-[640px]:col-span-3 place-self-center -mt-1"
+                className=" rounded-md flex justify-center items-center col-span-2 max-[640px]:col-span-3 place-self-center -mt-1 max-[600px]:-ms-5 max-[600px]:-mt-2"
               >
                 <svg
                   className="border border-main-Color  rounded-md max-[768px]:ms-7 max-[692px]:ms-10 w-10 lg:w-9 xl:w-11"
@@ -81,14 +81,14 @@ function AddToCardModal() {
                 </svg>
               </div>
 
-              <div className="modal-action -mt-1">
+              <div className="modal-action -mt-1 max-[600px]:-ms-1 max-[600px]:">
                 <form method="dialog">
-                  <button className="px-3 py-2 rounded-md hover:bg-main-Color hover:text-black border border-main-Color bg-slate-900 text-white dark:bg-white dark:text-black transform transition-all ease-linear duration-300">Close</button>
+                  <button className="px-3 py-2 max-[600px]:py-1.5  rounded-md hover:bg-main-Color hover:text-black border border-main-Color bg-slate-900 text-white dark:bg-white dark:text-black transform transition-all ease-linear duration-300">Close</button>
                 </form>
               </div>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-2 ms-2">
             <img className="w-[209px] h-full object-cover" src={image} alt={name} />
           </div>
         </div>

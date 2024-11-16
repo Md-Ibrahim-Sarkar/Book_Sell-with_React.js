@@ -9,8 +9,7 @@ import SearchModal from "../../Components/SearchModal/SearchModal";
 import { BookContext } from "../../Context/bookContext";
 
 function Sidebar({className}) {
-  const { books, setBooks, favorites, trending, newReleases, comingSoon } = useContext(BookContext);
-  const [selectedCategory, setSelectedCategory] = useState("Trending");
+  const { selectedCategory, setSelectedCategory, setBooks, favorites, trending, newReleases, comingSoon } = useContext(BookContext);
 
   const handleCategoryClick = (category, bookList) => {
     setSelectedCategory(category);
