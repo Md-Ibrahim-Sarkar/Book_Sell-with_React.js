@@ -59,7 +59,9 @@ function Sidebar({className}) {
           }`}
         >
           <GiSelfLove />
-          <span>Favorites</span>
+          <span className="relative">Favorites {favorites.length === 0 ? '' : <span className={`absolute -top-2 -right-4 bg-rose-600 rounded-full w-5 h-5 flex justify-center items-center text-white hover:text-black  ms-3 text-xs 
+            ${selectedCategory === "Favorites" ? 'bg-slate-950':''}
+            `} >{favorites.length}</span>}</span>
         </div>
       </div>
 
