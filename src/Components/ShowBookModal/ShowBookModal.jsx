@@ -67,7 +67,7 @@ function ShowBookModal() {
 
               <div
                 onClick={favoriteClick}
-                className=" rounded-md flex justify-center items-center col-span-2 max-[640px]:col-span-3 place-self-center -mt-1 max-[600px]:-ms-5 max-[600px]:-mt-2"
+                className=" rounded-md flex justify-center items-center col-span-2 max-[640px]:col-span-3 place-self-center -mt-1 max-[600px]:-ms-5 max-[600px]:-mt-2 max-[350px]:ms-[-10px]"
               >
                 <svg
                   className="border border-main-Color  rounded-md max-[768px]:ms-7 max-[692px]:ms-10 w-10 lg:w-9 xl:w-11"
@@ -81,7 +81,7 @@ function ShowBookModal() {
                 </svg>
               </div>
 
-              <div className="modal-action -mt-1 max-[600px]:-ms-1 max-[600px]:">
+              <div className="modal-action -mt-1 max-[600px]:-ms-1 max-[350px]:ms-[1px]">
                 <form method="dialog">
                   <button className="px-3 py-2 max-[600px]:py-1.5  rounded-md hover:bg-main-Color hover:text-black border border-main-Color bg-slate-900 text-white dark:bg-white dark:text-black transform transition-all ease-linear duration-300">Close</button>
                 </form>

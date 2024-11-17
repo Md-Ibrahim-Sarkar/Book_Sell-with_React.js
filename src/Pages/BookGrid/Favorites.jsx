@@ -1,27 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BookContext } from "../../Context/bookContext";
 
 function Favorites({ className, data }) {
   const { favorites, setFavorites } = useContext(BookContext);
-  const [isFilled, setIsFilled] = useState(false);
 
   const handleClick = () => {
-    setIsFilled(!isFilled);
+    const isFavorite = favorites.find((item) => item.id === data.id);
 
-    if (isFilled) {
+    if (isFavorite) {
       setFavorites(favorites.filter((item) => item.id !== data.id));
     } else {
       setFavorites([...favorites, data]);
     }
-
-
-  
   };
-  const isFavorite = favorites.find(item => item.id === data.id);
+
+  const isFavorite = favorites.find((item) => item.id === data.id);
 
   return (
     <div
-      onClick={() => (handleClick())}
+      onClick={handleClick}
       className={`${className} inline rounded-md flex justify-center items-center`}
     >
       <svg

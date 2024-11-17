@@ -59,8 +59,8 @@ function Sidebar({className}) {
           }`}
         >
           <GiSelfLove />
-          <span className="relative">Favorites {favorites.length === 0 ? '' : <span className={`absolute -top-2 -right-4 bg-rose-600 rounded-full w-5 h-5 flex justify-center items-center text-white hover:text-black  ms-3 text-xs 
-            ${selectedCategory === "Favorites" ? 'bg-slate-950':''}
+          <span className="relative">Favorites {favorites.length === 0 ? '' : <span className={`absolute -top-2 -right-4 bg-gradient-to-r from-green-400 via-green-200 to-green-600 font-bold rounded-full w-5 h-5 flex justify-center items-center text-black   ms-3 text-xs 
+            ${selectedCategory === "Favorites" ? 'bg-gradient-to-r from-black via-black to-black text-white':''}
             `} >{favorites.length}</span>}</span>
         </div>
       </div>

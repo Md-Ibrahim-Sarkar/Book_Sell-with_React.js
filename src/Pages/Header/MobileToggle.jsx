@@ -11,26 +11,26 @@ function MobileToggle() {
   const { setIsModalOpen } = useContext(BookContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
-
   return (
     <div className="flex relative justify-between container mx-auto px-1 min-[540px]:hidden py-2 border-b border-[#595959]">
       
       {/* Sidebar Toggle */}
       <div 
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
+        onClick={() => (setIsSidebarOpen(!isSidebarOpen),setIsFilterPanelOpen(false))} 
         className="relative cursor-pointer"
       >
         <RiMenuUnfoldFill className="w-10 h-6" />
         {isSidebarOpen && (
-          <div className="absolute top-full left-0 mt-2 bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-            <Sidebar className="max-h-[400px] w-full" />
+          <div className="absolute top-full left-0 mt-2  rounded-box z-[1] w-52 p-2 shadow bg-white dark:bg-slate-900">
+            
+            <Sidebar className="max-h-[400px] w-full " />
           </div>
         )}
       </div>
 
       {/* Search Modal Toggle */}
       <div 
-        onClick={() => setIsModalOpen(true)} 
+        onClick={() => (setIsModalOpen(true),setIsSidebarOpen(false),setIsFilterPanelOpen(false))} 
         className="relative cursor-pointer"
       >
         <IoSearchCircleSharp className="w-10 h-6" />
@@ -38,12 +38,12 @@ function MobileToggle() {
 
       {/* Filter Panel Toggle */}
       <div 
-        onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)} 
+        onClick={() => (setIsFilterPanelOpen(!isFilterPanelOpen),setIsSidebarOpen(false))} 
         className="relative cursor-pointer"
       >
         <TbFilterUp className="w-10 h-6" />
         {isFilterPanelOpen && (
-          <div className="absolute top-full right-0 mt-2 bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+          <div className="absolute top-full right-0 mt-2 bg-base-100 rounded-box z-[1] w-52 p-2 shadow bg-white dark:bg-slate-900">
             <FilterPanel />
           </div>
         )}
