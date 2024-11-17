@@ -7,7 +7,7 @@ import { FaFire } from "react-icons/fa";
 import ShowBookModal from "../../Components/ShowBookModal/ShowBookModal";
 
 function BookItem({ data }) {
-  const { setShowBookItem,comingSoon } = useContext(BookContext);
+  const { setShowBookItem } = useContext(BookContext);
   const { name, author, image, rating } = data;
 
 
